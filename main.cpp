@@ -8,19 +8,19 @@
 #include "morton.hpp"
 
 
-void binary_print(int x, int nb_bits = 10)
-{
-    static char b[32];
-    b[0] = '\0';
+//void binary_print(int x, int nb_bits = 10)
+//{
+//    static char b[32];
+//    b[0] = '\0';
 
-    int z;
-    for (z = 1 <<nb_bits; z > 0; z >>= 1)
-    {
-        strcat(b, ((x & z) == z) ? "1" : "0");
-    }
+//    int z;
+//    for (z = 1 <<nb_bits; z > 0; z >>= 1)
+//    {
+//        strcat(b, ((x & z) == z) ? "1" : "0");
+//    }
 
-    printf("%d (%s)\n", x, b);
-}
+//    printf("%d (%s)\n", x, b);
+//}
 
 
 

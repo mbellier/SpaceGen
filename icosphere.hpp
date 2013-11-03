@@ -12,6 +12,8 @@ public:
   void create(int recursionLevel);
   const QVector<float> &geometry() const;
 
+  void paint(float radius, float x, float y, float z) const;
+
 private:
   int addVertex(glm::vec3 p);
   int getMiddlePoint(int p1, int p2);

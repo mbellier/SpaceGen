@@ -18,6 +18,7 @@
 
 StarField::StarField()
 {
+  icosphere.create(1);
 }
 
 
@@ -50,23 +51,27 @@ void StarField::paintGL()
 
   // cf. GL_POINT_SPRITE_ARB ?
   // cf. VBO ?
-  glEnable(GL_TEXTURE_2D);
-  glBegin(GL_POINTS);
+//  glEnable(GL_TEXTURE_2D);
+//  glBegin(GL_POINTS);
 
-  int range = 20;
+  const int   range = 5;
+  const int   step  = 4;
+  const float scale = 2/3.;
   for (int x = -range; x < range; x++){
     for (int y = -range; y < range; y++){
       for (int z = -range; z < range; z++){
         srand(Morton::signed_encode_3(x,y,z));
         glColor3ub( rand()%255, rand()%255, rand()%255 );
 //        glColor4f(1,1,1,1);
-        glVertex3f(x*2, y*2, z*2);
+//        glVertex3f(x*2, y*2, z*2);
+
+        icosphere.paint(rand()%100/100. * scale, x*step, y*step, z*step);
 
 
       }
     }
   }
 
-  glEnd();
-  glDisable(GL_TEXTURE_2D);
+//  glEnd();
+//  glDisable(GL_TEXTURE_2D);
 }

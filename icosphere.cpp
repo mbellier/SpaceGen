@@ -3,6 +3,7 @@
 #include <QDebug>
 
 #include "morton.hpp"
+#include <QtOpenGL>
 
 Icosphere::Icosphere()
 {
@@ -154,6 +155,18 @@ void Icosphere::create(int recursionLevel)
 const QVector<float> &Icosphere::geometry() const
 {
   return _geometry;
+}
+
+// TODO move to mesh class
+void Icosphere::paint(float radius, float x, float y, float z) const
+{
+  glBegin(GL_TRIANGLES);
+  for (int i = 0; i < geometry().size(); i += 3){
+    glVertex3f(x + geometry().at(i)   * radius,
+               y + geometry().at(i+1) * radius,
+               z + geometry().at(i+2) * radius);
+  }
+  glEnd();
 }
 
 

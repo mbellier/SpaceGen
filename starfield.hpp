@@ -3,6 +3,7 @@
 
 #include <QtOpenGL>
 #include "texture.hpp"
+#include "icosphere.hpp"
 
 class StarField
 {
@@ -16,10 +17,7 @@ private:
 
   Texture tex;
 
-//  GlslProg	mShader;
-//  Texture		mTextureStar;
-//  Texture		mTextureCorona;
-//  VboMesh		mVboMesh;
+  Icosphere icosphere;
 };
 
 #endif // STARFIELD_H

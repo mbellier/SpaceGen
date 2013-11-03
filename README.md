@@ -27,7 +27,8 @@ Screenshots
 
 ### Icosphere
 
+![Icosphere image](/screenshots/icosphere.png "Icosphere")
 
+### Into space !
 
-
-![Icosphere image](/snapshots/icosphere.png "Icosphere")
+![Starfield image](/screenshots/starfield.png "Starfield")

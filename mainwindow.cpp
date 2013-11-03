@@ -87,7 +87,7 @@ void MainWindow::paintGL()
   glMultMatrixf((GLfloat*)&glm::mat4_cast(camera.getOrientation()));
   glTranslatef(camera.getPosition().x, camera.getPosition().y, camera.getPosition().z);
 
-//  starField.paintGL();
+  starField.paintGL();
 
 
   glBegin(GL_TRIANGLES);
