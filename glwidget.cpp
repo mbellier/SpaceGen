@@ -1,9 +1,9 @@
 #include "glwidget.hpp"
 
-GLWidget::GLWidget(int framesPerSecond, QWidget *parent, char *name)
+GLWidget::GLWidget(int framesPerSecond, QWidget *parent, const QString &name)
     : QGLWidget(parent)
 {
-    setWindowTitle(QString::fromUtf8(name));
+    setWindowTitle(name);
     if(framesPerSecond == 0)
         t_Timer = NULL;
     else

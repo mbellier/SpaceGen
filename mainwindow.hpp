@@ -6,6 +6,7 @@
 #include "starfield.hpp"
 
 #include <QGLBuffer>
+#include <QGLShaderProgram>
 
 #include "icosphere.hpp"
 
@@ -21,6 +22,8 @@ public:
     void keyPressEvent(QKeyEvent *keyEvent);
     void keyReleaseEvent(QKeyEvent *keyEvent);
     void processKeys();
+    unsigned int calculateFPS();
+    void closeEvent(QCloseEvent *event);
 private:
     int x;
     int mouseX;     // horizontal position of the mouse
@@ -28,10 +31,14 @@ private:
     int prevMouseX; // previous event horizontal position of the mouse
     int prevMouseY; // previous event vertical position of the mouse
 
+    float cameraSpeed;
+
     FPSCamera camera;
     StarField starField;
 
     QSet<Qt::Key> pressedKeys;
+
+    QElapsedTimer fpsTimer;
 
     Icosphere icosphere;
 
@@ -40,7 +47,11 @@ private:
     QGLBuffer   m_vertexbuffer;
     QGLBuffer   m_indicebuffer;
 
+    QGLBuffer *icosphere_vertexBuffer;
+
     // test shader
+    QGLShaderProgram m_shaderProgram;
+
 };
 
 #endif // MYWINDOW_H
