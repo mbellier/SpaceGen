@@ -5,7 +5,7 @@ Description
 -------------
 
 SpaceGen is a project in development experimenting with procedural generated space environments.
-The code is in C/C++ and the graphics are rendered using Qt/OpenGL.
+The code is in C/C++ and the graphics are rendered using Qt/OpenGL. It is published under the Apache v2.0 license.
 
 Modules
 -------------
@@ -32,3 +32,6 @@ Screenshots
 ### Into space !
 
 ![Starfield image](/screenshots/starfield.png "Starfield")
+
+
+![Starfield image2](/screenshots/starfield2.png "Starfield2")
